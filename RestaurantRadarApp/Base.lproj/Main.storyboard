@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RestaurantRadarApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="if1-mo-M0W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qfl-vG-K88">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aBL-ZO-k76">
+                                <rect key="frame" x="340" y="64" width="66" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdf-WI-8py">
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="30"/>
+                                        <color key="backgroundColor" red="0.67378568650000004" green="0.36986374859999999" blue="0.29800766709999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="LXi-Ly-l2v"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                        <state key="normal" title="Nearby">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showNearbyWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LU6-A2-b1I"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SaJ-aU-wa8">
+                                <rect key="frame" x="20" y="85" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="tracking:" destination="BYZ-38-t0r" eventType="valueChanged" id="PWB-s4-1y8"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1c5-Hd-CaL">
+                                <rect key="frame" x="22" y="56" width="65.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bSD-6n-MwK" firstAttribute="trailing" secondItem="aBL-ZO-k76" secondAttribute="trailing" constant="8" id="0VF-dL-8Mb"/>
+                            <constraint firstAttribute="bottom" secondItem="qfl-vG-K88" secondAttribute="bottom" id="1Lj-Mj-1lR"/>
+                            <constraint firstItem="qfl-vG-K88" firstAttribute="top" secondItem="if1-mo-M0W" secondAttribute="top" id="8QP-5S-1gb"/>
+                            <constraint firstItem="qfl-vG-K88" firstAttribute="leading" secondItem="if1-mo-M0W" secondAttribute="leading" id="B81-wZ-WKP"/>
+                            <constraint firstItem="aBL-ZO-k76" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1c5-Hd-CaL" secondAttribute="trailing" constant="8" symbolic="YES" id="Ild-jR-Oay"/>
+                            <constraint firstItem="aBL-ZO-k76" firstAttribute="top" secondItem="bSD-6n-MwK" secondAttribute="top" constant="20" id="Pq8-gp-roT"/>
+                            <constraint firstItem="1c5-Hd-CaL" firstAttribute="top" secondItem="bSD-6n-MwK" secondAttribute="top" constant="12" id="RC4-l2-IB0"/>
+                            <constraint firstAttribute="trailing" secondItem="qfl-vG-K88" secondAttribute="trailing" id="bhu-1g-eeL"/>
+                            <constraint firstItem="1c5-Hd-CaL" firstAttribute="leading" secondItem="bSD-6n-MwK" secondAttribute="leading" constant="22" id="icT-ex-OyH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bSD-6n-MwK"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="qfl-vG-K88" id="Wau-FD-SIc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
